@@ -3,6 +3,7 @@ body {
 	color: white;
 	font-family: Lato, Arial, sans-serif;
 	margin: 0;
+	overflow: hidden;
 }
 
 h1, h2 {
@@ -24,6 +25,7 @@ h2 {
 	font-size: 1em;
 	font-weight: 400;
 	margin-top: 2em;
+	transition: opacity 3s;
 }
 
 #painting, #silhouette {
@@ -43,5 +45,19 @@ h2 {
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
-	z-index: 100;
+	z-index: 10000;
+}
+
+.fb-content {
+	position: absolute;
+	transition-property: opacity;
+}
+
+.fb-image {
+	max-width: 300px;
+	height: auto;
+}
+
+.hidden {
+	opacity: 0;
 }
