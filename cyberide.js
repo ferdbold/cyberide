@@ -18,11 +18,12 @@ Cyberide.prototype.onStatusChange = function(response) {
 		console.log('Connected');
 		this.loadContent();
 	} else {
-		FB.login(this.onLogin, {scope: 'user_posts, user_photos'});
+		FB.login(this.onLogin.bind(this), {scope: 'user_posts, user_photos'});
 	}
 };
 
 Cyberide.prototype.onLogin = function(response) {
+	console.log(response);
 	if (response.authResponse) {
 		console.log('Connected');
 		this.loadContent();
@@ -69,7 +70,12 @@ Cyberide.prototype.animateContent = function() {
 				'transition-duration': (order * 100 + 5) + 's',
 				'z-index': Math.floor(order * 1000)
 			})
-			.removeClass('hidden');
+			.removeClass('hidden')
+			.addClass('fb-content-moving')
+			.offset({
+				left: Math.floor(Math.random() * 600) + window.innerWidth/2 - 300,
+				top: Math.floor(Math.random() * (window.innerHeight-350)) + 240
+			});
 	}
 };
 

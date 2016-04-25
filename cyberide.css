@@ -53,6 +53,10 @@ h2 {
 	transition-property: opacity;
 }
 
+.fb-content-moving {
+	transition-property: opacity, left, top;
+}
+
 .fb-image {
 	max-width: 300px;
 	height: auto;
