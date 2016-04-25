@@ -12,7 +12,7 @@
 	/** METHODS */
 
 	Cyberide.prototype.onLoad = function() {
-		alert('Welcome to ' + this.name);
+		
 	};
 
 	/** INITIALIZATION */
